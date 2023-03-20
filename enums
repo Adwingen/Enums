@@ -1,0 +1,38 @@
+/*
+*
+* Advanced C Programming Masterclass: Pointers & Memory in C
+*
+* @theme Enums
+* @brief Enums
+* @author Vlad Budnitski
+* @date 19/03/2023
+*
+*/
+
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+typedef enum months
+{
+    JAN = 1, FEV, MAR, APR, MAY, JUN, JUL, AUG, SET, OUT, NOV, DEC
+
+}MONTHS;
+
+int main()
+{
+    MONTHS month;
+    char* monthSalaries[12] = {"Jan","Fev","Mar","Apr","May","Jun","Jul","Aug","Set","Out","Nov","Dez"};
+    int salaries[12] = { 10,20,30,10,20,30 ,10,20,30,10,20,30 };
+
+    for (month = JAN; month <= DEC; month++)
+    {
+        printf("%2s%10d\n", monthSalaries[month-1], salaries[month - 1]);
+    }
+
+    return 0;
+}
